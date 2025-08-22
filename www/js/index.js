@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let transacoes = JSON.parse(localStorage.getItem("transacoes")) || [];
 
-    // Atualiza a tela
+    
   function atualizarUI() {
     listaTransacoes.innerHTML = "";
 
@@ -21,29 +21,29 @@ document.addEventListener("DOMContentLoaded", () => {
     transacoes.forEach((t, index) => {
         const li = document.createElement("li");
 
-        // Texto principal
+       
         const texto = document.createElement("span");
         texto.textContent = `${t.descricao} - R$ ${t.valor.toFixed(2)}`;
 
-        // Badge colorido
+      
         const badge = document.createElement("span");
         badge.textContent = t.tipo === "entrada" ? "💰 Entrada" : "💸 Saída";
         badge.className = `badge ${t.tipo}`;
 
-        // Botão de remover
+        
         const removerBtn = document.createElement("button");
         removerBtn.textContent = "🗑️";
         removerBtn.style.fontSize = "1.3rem";
         removerBtn.onclick = () => removerTransacao(index);
 
-        // Monta o item
+    
         li.appendChild(texto);
         li.appendChild(badge);
         li.appendChild(removerBtn);
 
         listaTransacoes.appendChild(li);
 
-        // Cálculo dos totais
+        
         if (t.tipo === "entrada") {
             entradas += t.valor;
         } else {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const saldoAtual = entradas - saidas;
         saldoEl.textContent = saldoAtual.toFixed(2);
 
-        // Aplica classes de acordo com o saldo
+        
         if (saldoAtual < 0) {
             saldoEl.classList.add("negativo");
             saldoEl.classList.remove("positivo");
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("transacoes", JSON.stringify(transacoes));
 }
 
-    // Adicionar transação
+    
     function adicionarTransacao() {
         const descricao = descricaoInput.value.trim();
         const valor = parseFloat(valorInput.value);
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarUI();
     }
 
-    // Remover transação
+ 
     function removerTransacao(index) {
         transacoes.splice(index, 1);
         atualizarUI();
