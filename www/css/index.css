@@ -1,0 +1,195 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: #8c968c; /* cinza base */
+    color: #2c2c2c;
+    line-height: 1.6;
+    padding-bottom: 3rem;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #7913c2; /* roxo */
+    color: #fff;
+    text-align: center;
+    padding: 1.2rem;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+header h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+/* ===== CONTAINERS ===== */
+.app {
+    max-width: 600px;
+    margin: auto;
+    padding: 1rem;
+}
+
+/* Seções */
+section {
+    background: #f9f9f9;
+    margin-top: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 20px; /* mais arredondado */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+section h2 {
+    font-size: 1.2rem;
+    color: #7913c2;
+    margin-bottom: 0.8rem;
+    border-left: 5px solid #7913c2;
+    padding-left: 10px;
+}
+
+/* ===== FORM ===== */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+    background: #fff;
+    font-size: 1rem;
+    transition: all 0.3s;
+    color: #2c2c2c;   /* 🔥 garante que o texto fique visível */
+}
+
+input:focus, select:focus {
+    border-color: #7913c2;
+    box-shadow: 0 0 6px rgba(121, 19, 194, 0.4);
+    background: #fff;
+    color: #2c2c2c;  /* 🔥 mantém a cor mesmo em foco */
+}
+
+/* ===== BOTÃO ===== */
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 14px;
+    background: #7913c2;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #5c0f91;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+/* ===== LISTA ===== */
+#lista-transacoes {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-transacoes li {
+    background: #ececec;
+    margin: 8px 0;
+    padding: 12px 15px;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 🔥 mantém tudo alinhado */
+    gap: 10px; /* espaço entre elementos */
+    font-size: 1rem;
+}
+
+.badge {
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: white;
+    white-space: nowrap; /* não quebra linha */
+}
+.badge.entrada {
+    background: #2ecc71; /* verde */
+}
+
+.badge.saida {
+    background: #e74c3c; /* vermelho */
+}
+
+
+#lista-transacoes span {
+    flex: 1; /* texto ocupa o espaço disponível */
+}
+
+#lista-transacoes li:nth-child(even) {
+    background: #e0e0e0;
+}
+
+/* Botão excluir com emoji */
+#lista-transacoes button {
+    background: #7913c2;       /* roxo */
+    border: none;
+    color: #fff;               /* ícone branco */
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    border-radius: 50%;        /* 🔥 botão redondinho */
+    width: 35px;
+    height: 35px;
+
+    display: flex;             /* centraliza ícone */
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 10px;         /* espaço do texto */
+    flex-shrink: 0;            /* não encolhe */
+    transition: 0.2s;
+}
+/* ===== SALDO NEGATIVO ===== */
+#saldo.negativo {
+    color: #e74c3c; /* vermelho */
+    text-shadow: 0 0 5px rgba(231, 76, 60, 0.5); /* leve brilho avermelhado */
+    font-weight: bold;
+}
+
+/* ===== SALDO POSITIVO ===== */
+#saldo.positivo {
+    color: #2ecc71; /* verde */
+    text-shadow: 0 0 5px rgba(46, 204, 113, 0.5); /* leve brilho verde */
+    font-weight: bold;
+}
+
+#lista-transacoes button:hover {
+    background: #5c0f91;       /* roxo mais escuro */
+    transform: scale(1.1);     /* animação */
+}
+
+/* ===== RESUMO ===== */
+.resumo-section p {
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.resumo-section strong {
+    color: #7913c2;
+}
